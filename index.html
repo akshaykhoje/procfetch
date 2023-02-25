@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">procfetch
-   &#160;<span id="projectnumber">0.1.2</span>
+   &#160;<span id="projectnumber">0.2.1</span>
    </div>
    <div id="projectbrief">A command-line system information utility written in C++</div>
   </td>
@@ -116,6 +116,10 @@ Prerequisites</h1>
 <ul>
 <li>ClangFormat - 14.0.0 or later</li>
 </ul>
+<p>for generating gif</p>
+<ul>
+<li>vhs - 0.2.0 or later</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Documentation</h1>
 <p>See the <a href="https://tanmaypatil105.github.io/procfetch/">documentation</a></p>
@@ -127,15 +131,12 @@ Brew</h2>
 </div><!-- fragment --> <div class="fragment"><div class="line">$ brew install procfetch</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 Manually</h2>
-<div class="fragment"><div class="line">$ git clone https://github.com/TanmayPatil105/procfetch.git</div>
-</div><!-- fragment --><div class="fragment"><div class="line">$ cd procfetch</div>
-</div><!-- fragment --><div class="fragment"><div class="line">$ chmod +x install.sh</div>
-</div><!-- fragment --> <div class="fragment"><div class="line">$ ./install.sh</div>
-</div><!-- fragment --> <div class="fragment"><div class="line">$ sudo chmod +x /usr/bin/procfetch</div>
-</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md12"></a>
+<div class="fragment"><div class="line">$ git clone https://github.com/TanmayPatil105/procfetch.git; cd procfetch</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">$ ./configure</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">$ sudo make install</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
 Uninstallation</h1>
-<div class="fragment"><div class="line">$ chmod +x uninstall.sh</div>
-</div><!-- fragment --> <div class="fragment"><div class="line">$ ./uninstall.sh</div>
+<div class="fragment"><div class="line">$ sudo make uninstall</div>
 </div><!-- fragment --><hr  />
 <h1><a class="anchor" id="autotoc_md13"></a>
 Usage</h1>
@@ -145,9 +146,20 @@ Usage</h1>
 <li><code>-a</code> to change color of ascii_art <div class="fragment"><div class="line">$ procfetch -a cyan</div>
 </div><!-- fragment --></li>
 <li><code>-d</code> to change print ascii_art of different distros <div class="fragment"><div class="line">$ procfetch -d Manjaro</div>
-</div><!-- fragment --> </li>
+</div><!-- fragment --></li>
+<li><code>-b</code> to display battery percentage <div class="fragment"><div class="line">$ procfetch -b</div>
+</div><!-- fragment --></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md14"></a>
+Customise</h1>
+<p>Add the following lines to your <code>.bash_profile</code>, <code>.bashrc</code> or <code>.zshrc</code> to customise <code>procfetch</code></p>
+<div class="fragment"><div class="line"># print default ascii art of Manjaro</div>
+<div class="line">alias procfetch=&quot;procfetch -d Manjaro&quot;</div>
+</div><!-- fragment --><div class="fragment"><div class="line"># print default ascii art of Kali with color cyan</div>
+<div class="line">alias procfetch=&quot;procfetch -d Kali -a cyan&quot;</div>
+</div><!-- fragment --><div class="fragment"><div class="line"># print battery percentage</div>
+<div class="line">alias procfetch=&quot;procfetch -b&quot;</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
 Docker</h1>
 <p>Define environment variable <code>PROCFETCH</code> in the actual project home directory.</p>
 <div class="fragment"><div class="line">$ PROCFETCH=$HOME/procfetch</div>
@@ -156,12 +168,9 @@ Docker</h1>
 </div><!-- fragment --><p>Build with Docker container </p><div class="fragment"><div class="line">$ docker run --rm -v $PROCFETCH:/procfetch -w /procfetch procfetch make</div>
 </div><!-- fragment --><p>Run with Docker container </p><div class="fragment"><div class="line">$ docker run --rm -v $PROCFETCH:/procfetch -w /procfetch procfetch make run</div>
 </div><!-- fragment --><p>Test with Docker container </p><div class="fragment"><div class="line">$ docker run --rm -v $PROCFETCH:/procfetch -w /procfetch procfetch make check</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md15"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md16"></a>
 Contributing</h2>
-<p>Make sure reading <a href="https://github.com/TanmayPatil105/procfetch/blob/main/CONTRIBUTING.md">Contributing.md</a> before Contributing</p>
-<h3><a class="anchor" id="autotoc_md16"></a>
-Disclamer :</h3>
-<p>Tried and tested on Debian, Ubuntu and ParrotOS. </p>
+<p>Make sure reading <a href="https://github.com/TanmayPatil105/procfetch/blob/main/CONTRIBUTING.md">Contributing.md</a> before Contributing </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
