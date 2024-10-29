@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">procfetch
-   &#160;<span id="projectnumber">0.2.2</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
    <div id="projectbrief">A command-line system information utility written in C++</div>
   </td>
@@ -77,14 +77,16 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a26162e2b508d20b7d50fd893bf8ff9c1"><td class="memItemLeft" align="right" valign="top"><a id="a26162e2b508d20b7d50fd893bf8ff9c1"></a>
-typedef std::function&lt; void(<a class="el" href="classCommand.html">Command</a> *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>func_type</b></td></tr>
-<tr class="separator:a26162e2b508d20b7d50fd893bf8ff9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df95d6e1acdd8a15fcccb69930687b0"><td class="memItemLeft" align="right" valign="top"><a id="a2df95d6e1acdd8a15fcccb69930687b0"></a>
+typedef std::function&lt; void(<a class="el" href="classCommand.html">Command</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>func_type</b></td></tr>
+<tr class="separator:a2df95d6e1acdd8a15fcccb69930687b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5179f1c9a1893c499540bfc3e81d5a10"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a5179f1c9a1893c499540bfc3e81d5a10">getOutput</a> ()</td></tr>
 <tr class="separator:a5179f1c9a1893c499540bfc3e81d5a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98372d9ee636859e7b157a873e3f4ae"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#ab98372d9ee636859e7b157a873e3f4ae">getErrorOutput</a> ()</td></tr>
+<tr class="separator:ab98372d9ee636859e7b157a873e3f4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a314e47b7b1733c4fbde4aa77f04fa42e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a314e47b7b1733c4fbde4aa77f04fa42e">getOutputLines</a> ()</td></tr>
 <tr class="separator:a314e47b7b1733c4fbde4aa77f04fa42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41a0a3360bdfddabfff631ef713b898b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a41a0a3360bdfddabfff631ef713b898b">getExitCode</a> ()</td></tr>
@@ -100,19 +102,19 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a0fe328bec813cdbf74f17bc1dba42a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53429828cf2d954e496dd828f18feb04"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a53429828cf2d954e496dd828f18feb04">exec_async</a> (const <a class="el" href="classPath.html">Path</a> &amp;cmd, const string &amp;arg, const func_type &amp;func)</td></tr>
 <tr class="separator:a53429828cf2d954e496dd828f18feb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3260a4b17b87b69cb2928e0dc6d32ef"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classCommand.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#ad3260a4b17b87b69cb2928e0dc6d32ef">exec</a> (const string &amp;cmd)</td></tr>
-<tr class="separator:ad3260a4b17b87b69cb2928e0dc6d32ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7cdf0794953616c607db07f3388b02"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classCommand.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a5b7cdf0794953616c607db07f3388b02">exec</a> (const string &amp;cmd)</td></tr>
+<tr class="separator:a5b7cdf0794953616c607db07f3388b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classCommand.html">Command</a> executes a command in a subshell(shell runs on a forked process).</p>
-<p>Sample code: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> c = <a class="code" href="classCommand.html#ad3260a4b17b87b69cb2928e0dc6d32ef">Command::exec</a>(<span class="stringliteral">&quot;ls -l&quot;</span>);</div>
+<p>Sample code: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> c = <a class="code" href="classCommand.html#a5b7cdf0794953616c607db07f3388b02">Command::exec</a>(<span class="stringliteral">&quot;ls -l&quot;</span>);</div>
 <div class="line"><span class="keywordflow">if</span> (c.getExitcode() == 0) {</div>
 <div class="line">    std::cout &lt;&lt; c.getOutput();</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassCommand_html_ad3260a4b17b87b69cb2928e0dc6d32ef"><div class="ttname"><a href="classCommand.html#ad3260a4b17b87b69cb2928e0dc6d32ef">Command::exec</a></div><div class="ttdeci">static Command * exec(const string &amp;cmd)</div><div class="ttdef"><b>Definition:</b> fetch.h:264</div></div>
+<div class="ttc" id="aclassCommand_html_a5b7cdf0794953616c607db07f3388b02"><div class="ttname"><a href="classCommand.html#a5b7cdf0794953616c607db07f3388b02">Command::exec</a></div><div class="ttdeci">static Command exec(const string &amp;cmd)</div><div class="ttdef"><b>Definition:</b> fetch.h:273</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad3260a4b17b87b69cb2928e0dc6d32ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3260a4b17b87b69cb2928e0dc6d32ef">&#9670;&nbsp;</a></span>exec()</h2>
+<a id="a5b7cdf0794953616c607db07f3388b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7cdf0794953616c607db07f3388b02">&#9670;&nbsp;</a></span>exec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,7 +123,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classCommand.html">Command</a>* Command::exec </td>
+          <td class="memname">static <a class="el" href="classCommand.html">Command</a> Command::exec </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
@@ -240,6 +242,32 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ab98372d9ee636859e7b157a873e3f4ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab98372d9ee636859e7b157a873e3f4ae">&#9670;&nbsp;</a></span>getErrorOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Command::getErrorOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>get contents written by the command to standard error output </dd></dl>
 
 </div>
 </div>
